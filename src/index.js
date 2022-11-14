@@ -70,11 +70,11 @@ const rangeFilter = (from, to) => {
 };
 
 const minPriceReducer = () => {
-  return goods.reduce((a, b) => Math.min(a, b))
+  return goods.reduce((accum, good) => Math.min(accum, good.price), goods[0].price)
 };
 
 const maxPriceReducer = () => {
-  return goods.reduce((a, b) => Math.max(a, b))
+  return goods.reduce((accum, good) => Math.max(accum, good.price), goods[0].price)
 };
 
 const toMaxSorter = () => {
